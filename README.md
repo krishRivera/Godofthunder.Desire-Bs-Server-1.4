@@ -60,7 +60,7 @@ Happy BombSquading
 <h2>CustomPowerups</h2>
 
 | Name | Info |
-| ---------- | -------- |-------- |
+| -------- |-------- |
 |  SuperStar   |Makes you Invincible for a while. really powerfull!|
 |  Sleep Bomb   |Puts You sleep|
 |  SpeedBoots   |Makes you run FASTER ! you'll love it   |
