@@ -59,13 +59,13 @@ Happy BombSquading
 #Powerups
 <h2>CustomPowerups</h2>
 
-| Image | Name | Info |
+| Name | Info |
 | ---------- | -------- |-------- |
-|   ![Party](https://github.com/MythB/BombSquad-Mods/blob/master/Media/superStar.png)   |  SuperStar   |Makes you Invincible for a while. really powerfull!|
-|   ![Sleep Bomb](https://cdn.discordapp.com/attachments/1009755282265604198/1029664758166728735/1665561509544.png)   |  Sleep Bomb   |Puts You sleep|
-|   ![SpeedBoots](https://github.com/MythB/BombSquad-Mods/blob/master/Media/speedBoots.png)   |  SpeedBoots   |Makes you run FASTER ! you'll love it   |
-|   ![Invisible](https://github.com/MythB/BombSquad-Mods/blob/master/Media/suprise.png)   |  Suprise   |Looks like Med-Pack be careful it's FAKE !|
-|   ![Tracker](https://github.com/MythB/BombSquad-Mods/blob/master/Media/iceCube.png)   |  IceCube   |Makes you FROZEN !   |
+|  SuperStar   |Makes you Invincible for a while. really powerfull!|
+|  Sleep Bomb   |Puts You sleep|
+|  SpeedBoots   |Makes you run FASTER ! you'll love it   |
+|  Suprise   |Looks like Med-Pack be careful it's FAKE !|
+|  IceCube   |Makes you FROZEN !   |
 
 
 
