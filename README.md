@@ -61,11 +61,21 @@ Happy BombSquading
 
 | Name | Info |
 | -------- |-------- |
-|  SuperStar   |Makes you Invincible for a while. really powerfull!|
+|  Party   |Makes you Rainbow for One Life|
 |  Sleep Bomb   |Puts You sleep|
 |  SpeedBoots   |Makes you run FASTER ! you'll love it   |
-|  Suprise   |Looks like Med-Pack be careful it's FAKE !|
-|  IceCube   |Makes you FROZEN !   |
+|  Tracker   |Tracks you to death ☠️ , Guide Missile|
+|  HighJump   |Makes you Jump Higher !   |
+|  StickyForce   |Sticks To you and Force , Wtf iam Doing   |
+|  Banana   |It's Not a Banana   |
+|  EnderPearls   |It Will Teleport You to place where it lands   |
+|  Artillery   |Air Strike on enemy   |
+|  ToxicBomb   |You Get Poised   |
+|  Weedbomb   |It's Weed My frnd   |
+|  Bunny   | Spawn's a Bunny Bot   |
+|  Rchar   |Gives a Random Charcter   |
+|  invisible | Makes you invisible For a while |
+|  Shockwave | Electrocutes Players come in it's radius |
 
 
 
