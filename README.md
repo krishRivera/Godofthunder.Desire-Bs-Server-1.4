@@ -56,6 +56,19 @@ Happy BombSquading
 
 **And Many More Actually many more cant write it all here**
 
+#Powerups
+<h2>CustomPowerups</h2>
+
+| Image | Name | Info |
+| ---------- | -------- |-------- |
+|   ![SuperStar](https://github.com/MythB/BombSquad-Mods/blob/master/Media/superStar.png)   |  SuperStar   |Makes you Invincible for a while. really powerfull!|
+|   ![Martyrdom](https://github.com/MythB/BombSquad-Mods/blob/master/Media/Martyrdom.png)   |  Martyrdom   |Drops sticky bombs to your location when you were killed!|
+|   ![SpeedBoots](https://github.com/MythB/BombSquad-Mods/blob/master/Media/speedBoots.png)   |  SpeedBoots   |Makes you run FASTER ! you'll love it   |
+|   ![Suprise](https://github.com/MythB/BombSquad-Mods/blob/master/Media/suprise.png)   |  Suprise   |Looks like Med-Pack be careful it's FAKE !|
+|   ![IceCube](https://github.com/MythB/BombSquad-Mods/blob/master/Media/iceCube.png)   |  IceCube   |Makes you FROZEN !   |
+
+
+
 <h2>Settings</h2>
 You can change all settings from hack.py some available in settings.py 
 #Special Thanks to Blitz and pcmodder and MrSmoothy
