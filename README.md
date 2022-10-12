@@ -1,2 +1,67 @@
-# Desire-bs-Server-1.4
-egg
+<h1>Desire-Server-Script</h1>
+
+**SPECIAL THANKS TO PCModder & Blitz**
+
+![PcModder](https://github.com/Mikahael)
+![Blitz](https://github.com/Ayush-Deep)
+
+<h2>SETUP</h2>
+➥Just Download and Add this Files to Your server or simply Clone them by using command below
+
+- `git clone https://github.com/Sudo-Desier/Desire-Server-main`
+
+**Note Use this commands in row**
+
+- `sudo apt-get update`
+- `sudo apt-get install python libsdl2-2.0-0 libpython2.7`
+- `sudo su`
+- `apt install python-pip`
+- ` sudo pip install pytz`
+
+- `cd Desire Server`
+- `chmod 777 bs_headless`
+- `chmod 777 bombsquad_server`
+- `chmod 777 config.py`
+- `tmux`
+- `./bombsquad_server`
+Thank you
+
+**Having Problem?**
+**Got A Bug?**
+
+![Join Discord](https://discord.gg/aKTudX4xNP)
+
+Happy BombSquading
+
+<h2>FEATURES</h2>
+
+![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1020746821347332106/20220917_225223.png)
+
+
+1.New Commands For Owner 
+
+2.New Commands For Admin&Vip
+
+3.New Admin Sys #Thanks to blitz
+
+4.Server Control Ease 
+
+5.Dark Theme
+
+6.Score On Screen
+
+7.Chat Filter
+
+8.Name filter 
+
+9.New Unlocable Abilities
+
+10.Effects
+
+**And Many More Actually many more cant write it all here**
+
+<h2>Settings</h2>
+You can change all settings from hack.py some available in settings.py 
+#Special Thanks to Blitz and pcmodder and MrSmoothy
+#thanks to bombdash creators and aswell as thanks to AwesomeLogic and MrSmoothy
+
