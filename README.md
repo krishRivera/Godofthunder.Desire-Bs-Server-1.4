@@ -1,4 +1,3 @@
-#0969DA
 <h1>Desire-Server-Script</h1>
 
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657022490230854/1665347382947.jpg)
@@ -85,8 +84,12 @@ Discord :- Desire#2365
 |  Shockwave | Electrocutes Players come in it's radius |
 
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029697925711921172/1665569490233.jpg)
-
-You can change all settings from hack.py some available in settings.py 
-#Special Thanks to Blitz and pcmodder and MrSmoothy
-#thanks to bombdash creators and aswell as thanks to AwesomeLogic and MrSmoothy
+**Special Thanks To all Of them**
+- Thanks to Blitz 
+- Thanks To Pcmodder 
+- Thanks To MrSmoothy
+- Thanks to Bombdash creators 
+- Thanks To awesomeLogic
+- Thanks To SobyDamn
+- Thanks To MythB
 
