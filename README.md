@@ -10,7 +10,7 @@
 
 - `git clone https://github.com/Sudo-Desier/Desire-Server-main`
 
-**Note Use this commands in row**
+**Note Use this commands one by one**
 
 - `sudo apt-get update`
 - `sudo apt-get install python libsdl2-2.0-0 libpython2.7`
@@ -30,7 +30,8 @@ Thank you
 **Got A Bug?**
 
 ![Join Discord](https://discord.gg/aKTudX4xNP)
-
+**OR**
+Discord id :- Desire#2365
 Happy BombSquading
 
 <h2>FEATURES</h2>
@@ -42,21 +43,16 @@ Happy BombSquading
 
 2.New Commands For Admin&Vip
 
-3.New Admin Sys #Thanks to blitz
-
 4.Server Control Ease 
 
 5.Dark Theme
-
-6.Score On Screen
 
 7.Chat Filter
 
 8.Name filter 
 
-9.New Unlocable Abilities
-
-10.Effects
+10.Best Powerups
+> Detailed info of powerup given below 
 
 **And Many More Actually many more cant write it all here**
 
