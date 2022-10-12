@@ -90,4 +90,7 @@ You can change all settings from hack.py some available in settings.py
 #Special Thanks to Blitz and pcmodder and MrSmoothy
 #thanks to bombdash creators and aswell as thanks to AwesomeLogic and MrSmoothy
 
+<!-- Place this tag where you want the button to render. -->
+<GitHubButton href="https://github.com/buttons/github-buttons/generate" data-icon="octicon-repo-template" aria-label="Use this template buttons/github-buttons on GitHub">Use this template</GitHubButton>
+
 [<img src="https://cdn.discordapp.com/attachments/1009755282265604198/1029681453056938024/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" width="250"/>](https://discord.gg/gaf4duhfmS)
