@@ -32,7 +32,7 @@ Thank you
 **Having Problem?**
 **Got A Bug?**
 
-![Join Discord](https://discord.gg/gaf4duhfmS)
+[<img src="https://cdn.discordapp.com/attachments/1009755282265604198/1029690459985027072/1665567727357.png" width="100"/>](https://discord.gg/gaf4duhfmS)
 
 **OR**
 
@@ -90,4 +90,3 @@ You can change all settings from hack.py some available in settings.py
 #Special Thanks to Blitz and pcmodder and MrSmoothy
 #thanks to bombdash creators and aswell as thanks to AwesomeLogic and MrSmoothy
 
-[<img src="https://cdn.discordapp.com/attachments/1009755282265604198/1029690459985027072/1665567727357.png" width="100"/>](https://discord.gg/gaf4duhfmS)
