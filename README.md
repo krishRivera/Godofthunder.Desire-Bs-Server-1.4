@@ -32,7 +32,7 @@ Thank you
 **Having Problem?**
 **Got A Bug?**
 
-![Join Discord](https://discord.gg/aKTudX4xNP)
+![Join Discord](https://discord.gg/gaf4duhfmS)
 
 **OR**
 
