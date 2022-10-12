@@ -3,6 +3,7 @@
 **SPECIAL THANKS TO PCModder & Blitz**
 
 ![PcModder](https://github.com/Mikahael)
+
 ![Blitz](https://github.com/Ayush-Deep)
 
 <h2>SETUP</h2>
@@ -34,37 +35,37 @@ Thank you
 Discord id :- Desire#2365
 Happy BombSquading
 
-<h2>FEATURES</h2>
 
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657021865267212/1665347178606.jpg)
 
 
-1.New Commands For Owner 
+1. New Commands For Owner 
 
-2.New Commands For Admin&Vip
+2. New Commands For Admin&Vip
 
-4.Server Control Ease 
+3. Spam protection 
 
-5.Dark Theme
+4. Server Control Ease 
 
-7.Chat Filter
+5. Dark Theme
 
-8.Name filter 
+6. Chat Filter
 
-10.Best Powerups
+7. Name filter 
+
+8. Powerups
 > Detailed info of powerup given below 
 
 **And Many More Actually many more cant write it all here**
 
-#Powerups
-<h2>CustomPowerups</h2>
+# Powerups
 
 | Name | Info |
 | -------- |-------- |
 |  Party   |Makes you Rainbow for One Life|
 |  Sleep Bomb   |Puts You sleep|
 |  SpeedBoots   |Makes you run FASTER ! you'll love it   |
-|  Tracker   |Tracks you to death ☠️ , Guide Missile|
+|  Tracker   |Tracks you to death , guided Missile|
 |  HighJump   |Makes you Jump Higher !   |
 |  StickyForce   |Sticks To you and Force , Wtf iam Doing   |
 |  Banana   |It's Not a Banana   |
