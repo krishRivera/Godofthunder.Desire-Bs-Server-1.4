@@ -36,9 +36,9 @@ Thank you
 
 **OR**
 
-Discord id :- Desire#2365
+Discord :- Desire#2365
 
-Happy BombSquading
+*Happy BombSquading*
 
 
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657021865267212/1665347178606.jpg)
