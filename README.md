@@ -33,8 +33,11 @@ Thank you
 **Got A Bug?**
 
 ![Join Discord](https://discord.gg/aKTudX4xNP)
+
 **OR**
+
 Discord id :- Desire#2365
+
 Happy BombSquading
 
 
