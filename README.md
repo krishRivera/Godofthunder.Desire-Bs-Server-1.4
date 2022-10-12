@@ -2,6 +2,8 @@
 
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657022490230854/1665347382947.jpg)
 
+Hey, I finished my server files. They contain a Ankit's awesome admin system, chat commands, powerups and cool configurations.
+
 **SPECIAL THANKS TO PCModder & Blitz**
 
 ![PcModder](https://github.com/Mikahael)
