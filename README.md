@@ -35,7 +35,7 @@ Happy BombSquading
 
 <h2>FEATURES</h2>
 
-![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1020746821347332106/20220917_225223.png)
+![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657021865267212/1665347178606.jpg)
 
 
 1.New Commands For Owner 
