@@ -90,5 +90,4 @@ You can change all settings from hack.py some available in settings.py
 #Special Thanks to Blitz and pcmodder and MrSmoothy
 #thanks to bombdash creators and aswell as thanks to AwesomeLogic and MrSmoothy
 
-[![](https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png)](https://github.com/user/repository/subscription)
-
+[<img src="https://cdn.discordapp.com/attachments/1009755282265604198/1029681453056938024/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" width="250"/>](https://discord.gg/gaf4duhfmS)
