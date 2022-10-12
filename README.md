@@ -83,9 +83,8 @@ Discord :- Desire#2365
 |  invisible | Makes you invisible For a while |
 |  Shockwave | Electrocutes Players come in it's radius |
 
+![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029697925711921172/1665569490233.jpg)
 
-
-<h2>Settings</h2>
 You can change all settings from hack.py some available in settings.py 
 #Special Thanks to Blitz and pcmodder and MrSmoothy
 #thanks to bombdash creators and aswell as thanks to AwesomeLogic and MrSmoothy
