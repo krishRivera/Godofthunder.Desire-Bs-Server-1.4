@@ -13,7 +13,7 @@ Hey, I finished my server files. They contain a Ankit's awesome admin system, ch
 <h2>SETUP</h2>
 ➥Just Download and Add this Files to Your server or simply Clone them by using command below
 
-- `git clone https://github.com/Sudo-Desier/Desire-Server-main`
+- `git clone https://github.com/Sudo-Desier/Desire-Bs-Server-1.4`
 
 **Note Use this commands one by one**
 
