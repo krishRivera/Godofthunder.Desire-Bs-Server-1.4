@@ -11,7 +11,7 @@ Hey, I finished my server files. They contain a Ankit's awesome admin system, ch
 ![Blitz](https://github.com/Ayush-Deep)
 
 <h2>SETUP</h2>
-➥Just Download and Add this Files to Your server or simply Clone them by using command below
+âž¥Just Download and Add this Files to Your server or simply Clone them by using command below
 
 - `git clone https://github.com/Sudo-Desier/Desire-Bs-Server-1.4`
 
@@ -40,27 +40,30 @@ Thank you
 
 Discord :- Desire#2365
 
-*Happy BombSquading 💕*
+*Happy BombSquading ðŸ’•*
 
 
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657021865267212/1665347178606.jpg)
 
 
-1. New Commands For Owner 
+- [x] New Commands For Owner 
 
-2. New Commands For Admin&Vip
+- [x] New Commands For Admin&Vip
 
-3. Spam protection 
+- [x] Spam protection 
 
-4. Server Control Ease 
+- [x] Server Control Ease 
 
-5. Dark Theme
+- [x] Dark Theme
 
-6. Chat Filter
+- [x] Chat Filter
 
-7. Name filter 
+- [x] Name filter 
 
-8. Powerups
+- [x] Powerups
+
+- [x] Auto Night mod
+
 > Detailed info of powerup given below 
 
 **And Many More Actually many more cant write it all here**
@@ -94,5 +97,5 @@ Discord :- Desire#2365
 - Thanks To awesomeLogic
 - Thanks To SobyDamn
 - Thanks To MythB
-- Thanks To egg 🥚
+- Thanks To egg ðŸ¥š
 
