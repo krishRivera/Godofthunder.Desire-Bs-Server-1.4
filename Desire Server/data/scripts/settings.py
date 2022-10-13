@@ -17,8 +17,8 @@ showTextsInBottom = False
 
 allow = True #for setchat
 
-messageList = ['ok','ok2','ok3']
-chatMessageTime = 5 #in seconds 
+messageList = ['Join Discord Server','Script By Desire']
+chatMessageTime = 90 #in seconds 
 
 gameTexts = ['Welcome To Blitz Server','Use "/shop commands" to see commands available to buy.','Use "/shop effects" to see effects available and their price.','Use "/me" or "/stats" to see your '+bs.getSpecialChar('ticket')+' and your stats in this server', 'Use "/buy" to buy effects that you like','Use "/donate" to give some of your tickets to other players','Use "/scoretocash" to convert some of your score to '+bs.getSpecialChar('ticket')+'\nCurrent Rate: 5scores = '+bs.getSpecialChar('ticket')+'1']
 

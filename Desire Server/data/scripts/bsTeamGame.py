@@ -7,8 +7,8 @@ import copy
 import bsTutorial
 import bsInternal
 
-gDefaultTeamColors = ((2,2,0), (2,0.15,0.15))
-gDefaultTeamNames = (u'DarkSide\ue00c',u'Thanos\ue00c')
+gDefaultTeamColors = ((1,0,0), (0,0,1))
+gDefaultTeamNames = (u'You\ue00c',u'Me\ue00c')
 
 gTeamSeriesLength = 7
 gFFASeriesLength = 24
