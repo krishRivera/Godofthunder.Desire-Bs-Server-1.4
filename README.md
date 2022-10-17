@@ -26,6 +26,7 @@ Just Download and Add this Files to Your server
 - `apt install python-pip`
 - ` sudo pip install pytz`
 
+**To use Auto night mode replace bsMap.py with vanilla version of bsMap.py
 # Requirements
 
 1. Brain
@@ -72,7 +73,7 @@ Discord :- Desire#2365
 # Powerups
 
 | Name | 
-| ------------------------------------ |
+| -------- |
 |  Party   |
 |  Sleep Bomb   |
 |  SpeedBoots   |
