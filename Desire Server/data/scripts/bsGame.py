@@ -5,6 +5,8 @@ import weakref
 import random
 import bsUtils
 import time
+import pytz
+import datetime
 import settings
 
 class Team(object):
@@ -2212,6 +2214,11 @@ class GameActivity(Activity):
         if self._map is None:
             raise Exception(
                 "getMap() cannot be called until after onTransitionIn()")
+        now=datetime.datetime.now(pytz.timezone('Asia/Calcutta')).time()
+        nightstart=now.replace(hour=19,minute=30)
+        nightend=now.replace(hour=6)    
+        if(now>nightstart or now<nightend):
+             bs.getSharedObject('globals').tint = (0.5,0.7,1)
         return self._map
 
     def getInstanceDisplayString(self):
