@@ -1,26 +1,20 @@
 <h1>Desire-Server-Script</h1>
 
+[![MPL License](https://img.shields.io/badge/License-MPL-green.svg)](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/LICENSE)
+
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657022490230854/1665347382947.jpg)
 
 Hey, I finished my server files. They contain a Ankit's awesome admin system, chat commands, powerups and cool configurations.
 
-**SPECIAL THANKS TO PCModder & Blitz**
-
-![PcModder](https://github.com/Mikahael)
-
-![Blitz](https://github.com/Ayush-Deep)
-
 <h2>SETUP</h2>
+Just Download and Add this Files to Your server or simply Clone them by using command below
 
-**Just Download and Add this Files to Your server.**
+- `git clone https://github.com/Sudo-Desier/Desire-Bs-Server-1.4`
 
 **Note Use this commands one by one**
 
 - `sudo apt-get update`
 - `sudo apt-get install python libsdl2-2.0-0 libpython2.7`
-- `sudo su`
-- `apt install python-pip`
-- ` sudo pip install pytz`
 
 - `cd Desire Server`
 - `chmod 777 bs_headless`
@@ -28,12 +22,22 @@ Hey, I finished my server files. They contain a Ankit's awesome admin system, ch
 - `chmod 777 config.py`
 - `tmux`
 - `./bombsquad_server`
+- `sudo su`
+- `apt install python-pip`
+- ` sudo pip install pytz`
+
+# Requirements
+
+1. Brain
+2. Ubuntu 18 (If you want to use auto night mode)
+3. ubuntu 20 or less ( if don't wanna use auto night mode)
+That's it i recommend you to use ubuntu 18
 Thank you
 
 **Having Problem?**
 **Got A Bug?**
 
-[<img src="https://cdn.discordapp.com/attachments/1009755282265604198/1029690459985027072/1665567727357.png" width="100"/>](https://discord.gg/gaf4duhfmS)
+[![Discord Server](https://img.shields.io/badge/Discord-Server-blue.svg)](https://discord.gg/gaf4duhfmS)
 
 **OR**
 
@@ -64,6 +68,8 @@ Discord :- Desire#2365
 - [x] Auto Night mod
 
 > Detailed info of powerup given below 
+
+*Note :- You cannot use auto night mode with always night mode you need you turn one off*
 
 **And Many More Actually many more cant write it all here**
 
