@@ -143,7 +143,7 @@ class BombFactory(object):
         self.regularTex = bs.getTexture('bombColor')
         self.iceTex = bs.getTexture('bombColorIce')
         self.stickyTex = bs.getTexture('bombStickyColor')
-        self.forceTex = bs.getTexture('bombColorIce')
+        self.forceTex = bs.getTexture('egg2')
         self.impactTex = bs.getTexture('impactBombColor')
         self.impactLitTex = bs.getTexture('impactBombColorLit')
         self.enderPearlTex = bs.getTexture('crossOutMask')
@@ -797,7 +797,10 @@ class Bomb(bs.Actor):
                 'reflectionScale': [1.0],
                 'materials': materials})
             self._trailTimer = bs.Timer(10,bs.Call(_addTrail,self),repeat=True)
-
+            self._light = bs.newNode('light',attrs={'position':position,'radius':0.3,
+                                     'color': (0.20,0.53,1), 'volumeIntensityScale':1.0})
+            bsUtils.animate(self._light,"intensity",{0:0,100:1})
+            self.node.connectAttr('position',self._light,'position')
         elif self.bombType == 'banana':
             self.node = bs.newNode('prop', delegate=self, attrs={
                 'position': position,
@@ -977,10 +980,6 @@ class Bomb(bs.Actor):
                     bs.animateArray(self.nodeText,'color',3,{0:(2,2,0),600:(2,0,0),900:(0,2,0),1200:(0,0,2),1500:(2,0,2), 1800:(2,1,0),2100:(0,2,2),2400:(2,2,0)},True)
                     bs.emitBGDynamics(position=self.nodeText.position, velocity=self.node.position, count=200, scale=1.4, spread=2.01, chunkType='spark')
                     
-        if hack.bigBomb:
-            curve = bsUtils.animate(self.node,"modelScale",{0:0, 200:1.3, 260:1})
-            bs.gameTimer(200,curve.delete)
-            
         if self.bombType == 'toxic': bsUtils.animate(self.node,"modelScale",{0:0, 200:1.3, 260:1.0, 2800:1.0, 2900:0.6, 3000:2.0})
     	else: bsUtils.animate(self.node,"modelScale",{0:0, 200:1.3, 260:1})
             

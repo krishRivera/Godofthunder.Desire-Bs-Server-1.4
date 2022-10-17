@@ -984,7 +984,6 @@ class Spaz(bs.Actor):
                 self.pickUpPowerupCallback(self)
 
             if (msg.powerupType == 'tripleBombs'):
-            	bsUtils.PopupText(u"\ue00c Triple Bombs! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 tex = bs.Powerup.getFactory().texBomb
                 self._flashBillboard(tex)
                 self.setBombCount(3)
@@ -1000,7 +999,6 @@ class Spaz(bs.Actor):
                         bs.Timer(gPowerupWearOffTime,
                                  bs.WeakCall(self._multiBombWearOff))
             elif msg.powerupType == 'Party':
-                bsUtils.PopupText(u"\ue00c Thanks To Blitz \ue00c", color = self.node.color,scale = 1.7, position = self.node.position).autoRetain()
                 bs.animateArray(self.node,'color',3,{0:(0,0,2),500:(0,2,0),1000:(2,0,0),1500:(2,2,0),2000:(2,0,2),2500:(0,1,6),3000:(1,2,0)},True)
                 self.node.handleMessage('celebrate',5000)      
             elif msg.powerupType == 'Inv':
@@ -1035,7 +1033,6 @@ class Spaz(bs.Actor):
                     t.toesModel = bs.getModel(oldStyle+'Toes')
                     t.style = oldStyle
                 inv(True)
-                bsUtils.PopupText(u"\ue00c Thanks To Blitz \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self._InvWearOffTimer = bs.Timer(8000,bs.Call(old))        
             elif msg.powerupType == 'Rchar':
                 t = self.node
@@ -1057,30 +1054,21 @@ class Spaz(bs.Actor):
                         t.toesModel = bs.getModel(rchars+'Toes')
                         t.style = rchars
                 charChange(True)
-                bsUtils.PopupText(u"\ue00c Thanks To Blitz! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()                  
             elif msg.powerupType == 'landMines':
-            	bsUtils.PopupText(u"\ue00c Script By Desire! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.setLandMineCount(min(self.landMineCount+3, 3))
             elif msg.powerupType == 'elonMine':
-            	bsUtils.PopupText(u"\ue00c Script By Desire! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.setElonMineCount(self.elonMineCount+1)
             elif msg.powerupType == 'enderPearls':
-            	bsUtils.PopupText(u"\ue00c Script By Desire \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.setEnderPearlCount(self.enderPearlCount+1)
             elif msg.powerupType == 'sleepPotionBombs':
-            	bsUtils.PopupText(u"\ue00c Thanks To PC||MODDER! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
             	self.setSleepPotionCount(self.sleepPotionCount+1)
             elif msg.powerupType == 'banana':
-            	bsUtils.PopupText(u"\ue00c it's Not a Banana! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.setBananCount(self.bananCount+1)
             elif msg.powerupType == 'shockwave':
-            	bsUtils.PopupText(u"\ue00c Thanks To me! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.setShockWaveCount(self.shockWaveCount+2)                
             elif msg.powerupType == 'weedbomb':
-            	bsUtils.PopupText(u"\ue00c Thanks To PC||MODDER! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.setWeedBombCount(self.weedBombCount+2)                                
             elif msg.powerupType == 'god':
-            	bsUtils.PopupText(u"\ue00c Thanks To MythB! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self._hasBoxingGloves = True
                 self.equipBoxingGloves()
                 if self.node.exists():
@@ -1105,7 +1093,6 @@ class Spaz(bs.Actor):
                     self._godWearOffFlashTimer = bs.Timer(gPowerupWearOffTime-17000,bs.WeakCall(self._godWearOffFlash))
                     self._godWearOffTimer = bs.Timer(gPowerupWearOffTime-15000,bs.WeakCall(self._godWearOff))
             elif msg.powerupType == 'toxicBombs':
-            	bsUtils.PopupText(u"\ue00c Thanks To God! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.bombType = 'toxic'
                 tex = self._getBombTypeTex()
                 self._flashBillboard(tex)
@@ -1117,16 +1104,13 @@ class Spaz(bs.Actor):
                     self._bombWearOffFlashTimer = bs.Timer(gPowerupWearOffTime-2000,bs.WeakCall(self._bombWearOffFlash))
                     self._bombWearOffTimer = bs.Timer(gPowerupWearOffTime,bs.WeakCall(self._bombWearOff))
             elif msg.powerupType == 'stickyForce':
-            	bsUtils.PopupText(u"\ue00c Bombdash Devs \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.setForceBombCount(self.forceBombCount+1)
             elif msg.powerupType == 'artillery':
-            	bsUtils.PopupText(u"\ue00c Airstrike! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 bdUtils.Artillery(
                     position=self.node.position,
                     owner=self.node,
                     sourcePlayer=self.getPlayer())
             elif msg.powerupType == 'impactBombs':
-            	bsUtils.PopupText(u"\ue00c Thanks To eric! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.bombType = 'impact'
                 tex = self._getBombTypeTex()
                 self._flashBillboard(tex)
@@ -1142,7 +1126,6 @@ class Spaz(bs.Actor):
                         bs.Timer(gPowerupWearOffTime,
                                  bs.WeakCall(self._bombWearOff))
             elif msg.powerupType == 'stickyBombs':
-            	bsUtils.PopupText(u"\ue00c Thanks To PC||MODDER! \ue00c",color = self.node.color,scale = 1.7,position = self.node.position).autoRetain()
                 self.bombType = 'sticky'
                 tex = self._getBombTypeTex()
                 self._flashBillboard(tex)

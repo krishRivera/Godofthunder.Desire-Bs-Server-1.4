@@ -27,6 +27,8 @@ def check(cid):
 
 def warn(clientID):
 	if hack.enableChatFilter:
+		print 'Chat Filter & Name Filter loaded...' 
 		bs.screenMessage("Warning!!! Do Not Misbehave", color = (1,0,0), transient=True, clients=[clientID])
     	if warndict[clientID] == 0:
     		bs.screenMessage("Last Chance Warning 1/2", color = (1,0,0), transient=True, clients=[clientID])
+    

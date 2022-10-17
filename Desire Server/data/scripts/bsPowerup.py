@@ -211,7 +211,10 @@ class PowerupFactory(object):
 
 
 def getDefaultPowerupDistribution():
-    return hack.desire_powerup_dist 
+    if hack.mPowerup:
+        return hack.desire_powerup_dist
+    else:
+        return hack.getDefaultPowerupDistribution
 
 class Powerup(bs.Actor): #By Desire
     """

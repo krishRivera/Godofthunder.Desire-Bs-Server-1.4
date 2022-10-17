@@ -18,7 +18,7 @@ def __init__(self, vrOverlayCenterOffset=None):
         def text():
                 #bySoby
                 t = bs.newNode('text',
-                       attrs={ 'text':u'Message 1',
+                       attrs={ 'text':u'\ue00cWelcome To StormX Epic Teams\ue00c\nMake Sure To Join Discord Server',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
@@ -31,7 +31,7 @@ def __init__(self, vrOverlayCenterOffset=None):
                 bs.gameTimer(7000,t.delete)
                 ##
                 t = bs.newNode('text',
-                       attrs={ 'text':u'Message 2',
+                       attrs={ 'text':u'Use /em to use Emote & /help to get Helped',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
@@ -44,7 +44,7 @@ def __init__(self, vrOverlayCenterOffset=None):
                 bs.gameTimer(15000,t.delete)
                 #bySoby
                 t = bs.newNode('text',
-                       attrs={ 'text':u'Message 3',
+                       attrs={ 'text':u'Kindness is a language which the deaf can hear \n and the blind can see',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
@@ -57,7 +57,7 @@ def __init__(self, vrOverlayCenterOffset=None):
                 bs.gameTimer(25000,t.delete)
                 #bySoby..............................Dont Edit This
                 t = bs.newNode('text',
-                       attrs={ 'text':u'\ue04c/em To Use Emotes\ue04c',
+                       attrs={ 'text':u'Respect others and play well And No teaming',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
@@ -69,7 +69,7 @@ def __init__(self, vrOverlayCenterOffset=None):
                 bs.animate(t,'opacity',{27000: 0.0,27500: 1.0,33500: 1.0,34000: 0.0})
                 bs.gameTimer(34000,t.delete)
                 t = bs.newNode('text',
-                       attrs={ 'text':u'Message 4',
+                       attrs={ 'text':u'Script By Desire | | Link :- https://github.com/Sudo-Desier/Desire-Bs-Server-1.4',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
