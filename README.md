@@ -72,7 +72,7 @@ Discord :- Desire#2365
 # Powerups
 
 | Name | 
-| -------- |
+| ------------------------------------ |
 |  Party   |
 |  Sleep Bomb   |
 |  SpeedBoots   |
