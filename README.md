@@ -1,15 +1,15 @@
 <h1>Desire-Server-Script</h1>
 
 [![MPL License](https://img.shields.io/badge/License-MPL-green.svg)](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/LICENSE)
+[![Version](https://img.shields.io/badge/Version-1.0-red.svg)]
 
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657022490230854/1665347382947.jpg)
 
 Hey, I finished my server files. They contain a Ankit's awesome admin system, chat commands, powerups and cool configurations.
+Easy Server Management Now you don't need to open settings file to change small settings you can do it while staying inside game using settings commands commands info given ![here](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/COMMANDS.md)
 
 <h2>SETUP</h2>
-Just Download and Add this Files to Your server or simply Clone them by using command below
-
-- `git clone https://github.com/Sudo-Desier/Desire-Bs-Server-1.4`
+Just Download and Add this Files to Your server 
 
 **Note Use this commands one by one**
 
@@ -67,31 +67,27 @@ Discord :- Desire#2365
 
 - [x] Auto Night mod
 
-> Detailed info of powerup given below 
-
 *Note :- You cannot use auto night mode with always night mode you need you turn one off*
-
-**And Many More Actually many more cant write it all here**
 
 # Powerups
 
-| Name | Info |
-| -------- |-------- |
-|  Party   |Makes you Rainbow for One Life|
-|  Sleep Bomb   |Puts You sleep|
-|  SpeedBoots   |Makes you run FASTER ! you'll love it   |
-|  Tracker   |Tracks you to death , guided Missile|
-|  HighJump   |Makes you Jump Higher !   |
-|  StickyForce   |Sticks To you and Force , Wtf iam Doing   |
-|  Banana   |It's Not a Banana   |
-|  EnderPearls   |It Will Teleport You to place where it lands   |
-|  Artillery   |Air Strike on enemy   |
-|  ToxicBomb   |You Get Poised   |
-|  Weedbomb   |It's Weed My frnd   |
-|  Bunny   | Spawn's a Bunny Bot   |
-|  Rchar   |Gives a Random Charcter   |
-|  invisible | Makes you invisible For a while |
-|  Shockwave | Electrocutes Players come in it's radius |
+| Name | 
+| -------- |
+|  Party   |
+|  Sleep Bomb   |
+|  SpeedBoots   |
+|  Tracker   |
+|  HighJump   |
+|  StickyForce   |
+|  Banana   |
+|  EnderPearls   |
+|  Artillery   |
+|  ToxicBomb   |
+|  Weedbomb   |
+|  Bunny   | 
+|  Rchar   |
+|  invisible | 
+|  Shockwave | 
 
 ![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029697925711921172/1665569490233.jpg)
 **Special Thanks To all Of them**
