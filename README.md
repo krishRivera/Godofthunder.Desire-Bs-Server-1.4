@@ -1,9 +1,7 @@
-<h1>Desire-Server-Script</h1>
+<h1>INFORMATION</h1>
 
 [![MPL License](https://img.shields.io/badge/License-MPL-green.svg)](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0-red.svg)]
-
-![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657022490230854/1665347382947.jpg)
+[![Version](https://img.shields.io/badge/Version-1.0-red.svg)](https://youtu.be/dQw4w9WgXcQ)
 
 Hey, I finished my server files. They contain a Ankit's awesome admin system, chat commands, powerups and cool configurations.
 Easy Server Management Now you don't need to open settings file to change small settings you can do it while staying inside game using settings commands commands info given ![here](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/COMMANDS.md)
@@ -26,7 +24,10 @@ Just Download and Add this Files to Your server
 - `apt install python-pip`
 - ` sudo pip install pytz`
 
-**To use Auto night mode replace bsMap.py with vanilla version of bsMap.py
+Every single Command is required 
+
+**To use Auto night mode replace bsMap.py with vanilla version of bsMap.py**
+
 # Requirements
 
 1. Brain
@@ -46,9 +47,7 @@ Discord :- Desire#2365
 
 *Happy BombSquading*
 
-
-![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029657021865267212/1665347178606.jpg)
-
+# Features 
 
 - [x] New Commands For Owner 
 
@@ -90,7 +89,8 @@ Discord :- Desire#2365
 |  invisible | 
 |  Shockwave | 
 
-![alt text](https://cdn.discordapp.com/attachments/1009755282265604198/1029697925711921172/1665569490233.jpg)
+# Thanks
+
 **Special Thanks To all Of them**
 - Thanks to Blitz 
 - Thanks To Pcmodder 
@@ -100,4 +100,3 @@ Discord :- Desire#2365
 - Thanks To SobyDamn
 - Thanks To MythB
 - Thanks To egg 🥚
-
