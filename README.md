@@ -89,6 +89,10 @@ Discord :- Desire#2365
 |  invisible | 
 |  Shockwave | 
 
+# Questions
+**What is Auto Night Mode?**
+Simply server will turn on Night mode aka Night vision at 6 or 7pm and it will automatically turn it off at 5-7am idk exact time
+
 # Thanks
 
 **Special Thanks To all Of them**
