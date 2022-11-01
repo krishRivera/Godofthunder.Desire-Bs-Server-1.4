@@ -13,16 +13,15 @@ Just Download and Add this Files to Your server
 
 - `sudo apt-get update`
 - `sudo apt-get install python libsdl2-2.0-0 libpython2.7`
-
+- `sudo su`
+- `apt install python-pip`
+- ` sudo pip install pytz`
 - `cd Desire Server`
 - `chmod 777 bs_headless`
 - `chmod 777 bombsquad_server`
 - `chmod 777 config.py`
 - `tmux`
 - `./bombsquad_server`
-- `sudo su`
-- `apt install python-pip`
-- ` sudo pip install pytz`
 
 Every single Command is required 
 
