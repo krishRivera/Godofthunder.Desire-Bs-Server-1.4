@@ -23835,7 +23835,7 @@ def _filterChatMessage(msg, clientID):
     if msg.startswith('/'):
 	import chatCmd
 	chatCmd.cmd(msg,clientID)
-	return msg
+	return None
     import filter
     for word in filter.f_words:
         if word in msg.lower():
@@ -23843,6 +23843,7 @@ def _filterChatMessage(msg, clientID):
             filter.warn(clientID)
             filter.check(clientID)
             msg = "**Restricted Words**"
+            bsInternal._chatMessage('Haha Not Here You Nub' + name)
     if settings.enableCoinSystem:
 	import coinSystem
 	if msg.lower() == coinSystem.correctAnswer:

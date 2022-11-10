@@ -135,168 +135,90 @@ class UltraPunch(bs.Actor):
         bs.gameTimer(speed+1, self.visualRadius.delete)
 
 
-class ShockWave(bs.Actor):
-
-    def __init__(self, position=(0, 1, 0), radius=2, speed=100):
+class ShockWave(bs.Actor): #some bombdash stuff cause why not
+    def __init__(self,position = (0,1,0),radius=2,speed = 200):
         bs.Actor.__init__(self)
-        self.radius = radius
         self.position = position
-        self.s = None
-
+        
         self.shockWaveMaterial = bs.Material()
-        self.shockWaveMaterial.addActions(
-            conditions=(('theyHaveMaterial',
-                         bs.getSharedObject('playerMaterial'))),
-            actions=(('modifyPartCollision', 'collide', True),
-                     ('modifyPartCollision', 'physical', False),
-                     ('call', 'atConnect', self.touchedSpaz)))
+        self.shockWaveMaterial.addActions(conditions=(('theyHaveMaterial', bs.getSharedObject('playerMaterial'))),actions=(("modifyPartCollision","collide",True),
+                                                      ("modifyPartCollision","physical",False),
+                                                      ("call","atConnect", self.touchedSpaz)))
+        self.shockWaveMaterial.addActions(conditions=(('theyHaveMaterial', bs.getSharedObject('objectMaterial')),'and',('theyDontHaveMaterial', bs.getSharedObject('playerMaterial'))),actions=(("modifyPartCollision","collide",True),
+                                                      ("modifyPartCollision","physical",False),
+                                                      ("call","atConnect", self.touchedObj)))
+        self.radius = radius
 
-        self.shockWaveMaterial.addActions(
-            conditions=(('theyHaveMaterial',
-                         bs.getSharedObject('objectMaterial')),
-                        'and', ('theyDontHaveMaterial',
-                                bs.getSharedObject('playerMaterial'))),
-            actions=(('modifyPartCollision', 'collide', True),
-                     ('modifyPartCollision', 'physical', False),
-                     ('call', 'atConnect', self.touchedObj)))
-
-        self.node = bs.newNode('region', attrs={
-            'position': (self.position[0],
-                         self.position[1],
-                         self.position[2]),
-            'scale': (0.1, 0.1, 0.1),
-            'type': 'sphere',
-            'materials': [self.shockWaveMaterial]})
-
-        explosion = bs.newNode('explosion', attrs={
-            'position': self.node.position,
-            'radius': 1,
-            'big': True,
-            'color': (0.3, 0.3, 1.0)})
-
-        def dowaves():
-            self.visualRadius = bs.newNode('shield', attrs={
-                'position': self.position,
-                'color': (0.05, 0.05, 1),
-                'radius': 0.05})
-
-            bs.animate(self.visualRadius, 'radius',
-                       {0: 0, speed: self.radius*2})
-
-            bs.gameTimer(speed+1, self.visualRadius.delete)
-
-        scale = {0: (0, 0, 0), speed: (self.radius, self.radius, self.radius)}
-        bs.animateArray(self.node, 'scale', 3, scale, True)
-
-        bs.Blast(
-            position=self.position,
-            blastRadius=1).autoRetain()
-
-        bs.Call(dowaves)
-        bs.gameTimer(100, bs.Call(dowaves))
-        bs.gameTimer(150, explosion.delete)
-        bs.gameTimer(200, bs.Call(dowaves))
-        bs.gameTimer(500, self.node.delete)
-
-    def re(self):
-        try:
-            self.node2.getDelegate()._punchPowerScale = self.s
-        except StandardError:
-            pass
-
+        self.node = bs.newNode('region',
+                       attrs={'position':(self.position[0],self.position[1],self.position[2]),
+                              'scale':(0.1,0.1,0.1),
+                              'type':'sphere',
+                              'materials':[self.shockWaveMaterial]})
+                              
+        self.visualRadius = bs.newNode('shield',attrs={'position':self.position,'color':(0.05,0.05,0.1),'radius':0.1})
+        
+        bsUtils.animate(self.visualRadius,"radius",{0:0,speed:self.radius*2})
+        bsUtils.animateArray(self.node,"scale",3,{0:(0,0,0),speed:(self.radius,self.radius,self.radius)},True)
+        
+        bs.gameTimer(speed+1,self.node.delete)
+        bs.gameTimer(speed+1,self.visualRadius.delete)
+        
+        
     def touchedSpaz(self):
-        self.node2 = bs.getCollisionInfo('opposingNode')
-
-        def shockSpaz():
-            self.node2.getDelegate().shock()
-
-        bs.gameTimer(400, shockSpaz)
-
-        self.s = self.node2.getDelegate()._punchPowerScale
-        self.node2.getDelegate()._punchPowerScale -= 0.3
-
-        bs.gameTimer(2000, bs.Call(self.re))
-
-        bs.playSound(bs.getSound(random.choice(['explosion01',
-                                                'explosion02',
-                                                'explosion03'])))
-
-        self.node2.handleMessage(
-            'impulse', self.node2.position[0], self.node2.position[1],
-            self.node2.position[2], -self.node2.velocity[0],
-            -self.node2.velocity[1], -self.node2.velocity[2],
-            200, 200, 0, 0, -self.node2.velocity[0],
-            -self.node2.velocity[1], -self.node2.velocity[2])
-
-        flash = bs.newNode('flash', attrs={
-            'position': self.node2.position,
-            'size': 0.7,
-            'color': (0, 0.4+random.random(), 1)})
-
-        explosion = bs.newNode('explosion', attrs={
-            'position': self.node2.position,            
-            'radius': 0.4,
-            'big': True,
-            'color': (0.3, 0.3, 1)})
-
-        bs.gameTimer(400, explosion.delete)
-
-        bs.emitBGDynamics(
-            position=self.node2.position,
-            count=20,
-            scale=0.5,
-            spread=0.5,
-            chunkType='spark')
-
-        bs.gameTimer(60, flash.delete)
-
+        node = bs.getCollisionInfo('opposingNode')
+        
+        s = node.getDelegate()._punchPowerScale
+        node.getDelegate()._punchPowerScale -= 0.3
+        def re():
+            node.getDelegate()._punchPowerScale = s
+        bs.gameTimer(2000,re)
+        
+        bs.playSound(bs.getSound(random.choice(['shatter'])))
+        node.handleMessage("impulse",node.position[0],node.position[1],node.position[2],
+                                    -node.velocity[0],-node.velocity[1],-node.velocity[2],
+                                    200,200,0,0,-node.velocity[0],-node.velocity[1],-node.velocity[2])
+        flash = bs.newNode("flash",
+                                   attrs={'position':node.position,
+                                          'size':0.7,
+                                          'color':(0,0.4+random.random(),1)})
+                                          
+        explosion = bs.newNode("explosion",
+                               attrs={'position':node.position,
+                                      'velocity':(node.velocity[0],max(-1.0,node.velocity[1]),node.velocity[2]),
+                                      'radius':0.4,
+                                      'big':True,
+                                      'color':(0.3,0.3,1)})
+        bs.gameTimer(400,explosion.delete)
+                                          
+        bs.emitBGDynamics(position=node.position,count=20,scale=0.5,spread=0.5,chunkType='spark')
+        bs.gameTimer(60,flash.delete)
+    
     def touchedObj(self):
         node = bs.getCollisionInfo('opposingNode')
-        bs.playSound(bs.getSound(random.choice(['explosion01',
-                                                'explosion02',
-                                                'explosion03'])))
+        bs.playSound(bs.getSound(random.choice(['shatter'])))
 
-        node.handleMessage(
-            'impulse', node.position[0]+random.uniform(-2, 2),
-            node.position[1]+random.uniform(-2, 2),
-            node.position[2]+random.uniform(-2, 2),
-            -node.velocity[0]+random.uniform(-2, 2),
-            -node.velocity[1]+random.uniform(-2, 2),
-            -node.velocity[2]+random.uniform(-2, 2),
-            100, 100, 0, 0, -node.velocity[0]+random.uniform(-2, 2),
-            -node.velocity[1]+random.uniform(-2, 2),
-            -node.velocity[2]+random.uniform(-2, 2))
-
+        node.handleMessage("impulse",node.position[0]+random.uniform(-2,2),node.position[1]+random.uniform(-2,2),node.position[2]+random.uniform(-2,2),
+                                    -node.velocity[0]+random.uniform(-2,2),-node.velocity[1]+random.uniform(-2,2),-node.velocity[2]+random.uniform(-2,2),
+                                    100,100,0,0,-node.velocity[0]+random.uniform(-2,2),-node.velocity[1]+random.uniform(-2,2),-node.velocity[2]+random.uniform(-2,2))
+        flash = bs.newNode("flash",
+                                   attrs={'position':node.position,
+                                          'size':0.4,
+                                          'color':(0,0.4+random.random(),1)})
+                                          
+        explosion = bs.newNode("explosion",
+                               attrs={'position':node.position,
+                                      'velocity':(node.velocity[0],max(-1.0,node.velocity[1]),node.velocity[2]),
+                                      'radius':0.4,
+                                      'big':True,
+                                      'color':(0.3,0.3,1)})
+        bs.gameTimer(400,explosion.delete)
+                                          
+        bs.emitBGDynamics(position=node.position,count=20,scale=0.5,spread=0.5,chunkType='spark')
+        bs.gameTimer(60,flash.delete)
         
-
-        try:
-            explosion = bs.newNode('explosion', attrs={
-                'position': node.position,
-                'velocity': (node.velocity[0],
-                             max(-1.0, node.velocity[1]),
-                             node.velocity[2]),
-                'radius': 0.4,
-                'big': True,
-                'color': (0.3, 0.3, 1)})
-        except AttributeError:
-            pass
-
-        bs.gameTimer(400, explosion.delete)
-
-        bs.emitBGDynamics(
-            position=node.position,
-            count=20,
-            scale=0.5,
-            spread=0.5,
-            chunkType='spark')
-
-        
-
     def delete(self):
         self.node.delete()
         self.visualRadius.delete()
-
-
 class Apple(bs.Actor):
 
     def __init__(self, position=(0, 6, 0)):

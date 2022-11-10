@@ -7,7 +7,7 @@ import copy
 import bsTutorial
 import bsInternal
 
-gDefaultTeamColors = ((1,0.31,0.31), (0.28,0.28,1))
+gDefaultTeamColors = ((1,0.31,0.31), (1,1,0))
 gDefaultTeamNames = (u'You\ue00c',u'Me\ue00c')
 
 gTeamSeriesLength = 7

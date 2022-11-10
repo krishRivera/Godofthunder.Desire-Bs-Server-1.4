@@ -45,10 +45,10 @@ class PermissionEffect(object):
                                 owner=self.owner,
                                 attrs={'text': prefix,  # prefix text
                                        'inWorld': True,
-                                       'shadow': 1.2,
-                                       'flatness': 1.0,
+                                       'shadow': 1,
+                                       'flatness': 1.2,
                                        'color': prefixColor,
-                                       'scale': 0.0,
+                                       'scale': 0,
                                        'hAlign': 'center'})
 
         m.connectAttr('output', self._Text, 'position')
@@ -243,7 +243,21 @@ class Enhancement(bs.Actor):
                     f.write('-----------------------------------------------------------------\n')
                 except:
                     pass
+        neet = self.spazRef()
+        if playeraccountid in gph.cursed:  
+            spaz.node.color = (9,9,9)
+            neet.node.handleMessage(bs.PowerupMessage(powerupType = 'curse'))
+            neet.node.handleMessage(bs.PowerupMessage(powerupType = 'bye2'))     
+       
+        if playeraccountid in gph.rainbowEffect:  
+            neet.node.handleMessage(bs.PowerupMessage(powerupType = 'rainbow'))
+            
+        if playeraccountid in gph.ownerHashes:  
+            neet.node.handleMessage(bs.PowerupMessage(powerupType = 'rainbow'))            
 
+        if playeraccountid in gph.egg:  
+            spaz.node.color = (5,5,5)
+            
         if profiles == [] or profiles == {}:
             profiles = bs.getConfig()['Player Profiles']
 
@@ -314,25 +328,36 @@ class Enhancement(bs.Actor):
                 elif cl_str in gph.metalEffect:
 		    self.metalTimer = bs.Timer(500, bs.WeakCall(self.emitMetal), repeat=True)
 		    flag = 1
-	
 		if cl_str in gph.customlist:
 			    PermissionEffect(owner = spaz.node,prefix =gph.customlist[cl_str],prefixAnim = {0: (1,0,0), 250: (0,1,0),250*2:(0,0,1),250*3:(1,0,0)})
                 elif cl_str in gph.customtagHashes  or cl_str in gph.topperslist:
 			    tag = getTag(1)
-			    if tag == '0': tag = u'\ue047MEMBER\ue047'
-			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (1,0,0), 250: (0,1,0),250*2:(0,0,1),250*3:(1,0,0)})
+			    if tag == '0': tag = u'tag Here'
+			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (1,1,1)})
                 elif cl_str in gph.ownerHashes:
 			    tag = getTag(1)
 			    if tag == '0': tag = u'\ue043O.W.N.E.R\ue043'
-			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (1,0,0), 250: (0,1,0),250*2:(0,0,1),250*3:(1,0,0)})
+			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (1,1,1)})
+                elif cl_str in gph.manager:
+			    tag = getTag(1)
+			    if tag == '0': tag = u'\ue043MANAGER\ue043'
+			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (0.48,0.46,1)})
                 elif cl_str in gph.adminHashes:
 			    tag = getTag(1)
-			    if tag == '0': tag = u'\ue048A.D.M.I.N\ue048'
-			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (1,0,0), 250: (0,1,0),250*2:(0,0,1),250*3:(1,0,0)})
+			    if tag == '0': tag = u'\ue048MODERATOR\ue048'
+			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (1,0.45,0.63)})
                 elif cl_str in gph.vipHashes:	
 			    tag = getTag(1)
-			    if tag == '0': tag = u'[V.I.P+]'
-			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (1,0,0), 250: (0,1,0),250*2:(0,0,1),250*3:(1,0,0)})
+			    if tag == '0': tag = u'\ue047MEMBER\ue047'
+			    PermissionEffect(owner = spaz.node,prefix = tag,prefixAnim = {0: (1,1,0.40)})
+                elif cl_str in gph.egg:	
+			    tag = getTag(1)
+			    eggtag = u'\ue00cEgg Support\ue00c'
+			    PermissionEffect(owner = spaz.node,prefix = eggtag,prefixAnim = {0: (1,1,1)})
+                elif cl_str in gph.cursed:	
+			    tag = getTag(1)
+			    cursedtag = u'\ue00cCursed\ue00c'
+			    PermissionEffect(owner = spaz.node,prefix = cursedtag,prefixAnim = {0: (1,1,1)})
         except:
                 pass
 

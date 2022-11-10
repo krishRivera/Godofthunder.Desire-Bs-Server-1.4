@@ -120,6 +120,7 @@ class PowerupFactory(object):
         self._lastPowerupType = None
 
         self.model = bs.getModel("powerup")
+        self.bunnymodel = bs.getModel("egg")
         self.modelSimple = bs.getModel("powerupSimple")
 
         self.texBomb = bs.getTexture("powerupBomb")
@@ -132,6 +133,7 @@ class PowerupFactory(object):
         self.texGod = bs.getTexture("powerupSpeed")
         self.texArtillery = bs.getTexture('buttonBomb')
         self.shockWaveTex = bs.getTexture('smoke')
+        self.texcurseBomb = bs.getTexture("black")
         self.texRadioactiveBombs = bs.getTexture("rgbStripes")
         self.texHighJump = bs.getTexture('buttonJump')
         self.texEnderPearls = bs.getTexture("ouyaOButton")
@@ -142,7 +144,7 @@ class PowerupFactory(object):
         self.texElonMuskMine = bs.getTexture('achievementMine')
         self.texweedbomb = bs.getTexture("egg2")
         self.texParty = bs.getTexture("eggTex1")
-        self.texBunny = bs.getTexture('achievementFreeLoader')
+        self.texBunny = bs.getTexture('eggTex1')
         self.texRchar = bs.getTexture("achievementEmpty")
         self.texInv = bs.getTexture("achievementMedalSmall")
         self.texCurse = bs.getTexture("powerupCurse")
@@ -211,11 +213,7 @@ class PowerupFactory(object):
 
 
 def getDefaultPowerupDistribution():
-    if hack.mPowerup:
         return hack.desire_powerup_dist
-    else:
-        return hack.getDefaultPowerupDistribution
-
 class Powerup(bs.Actor): #By Desire
     """
     category: Game Flow Classes
@@ -278,6 +276,9 @@ class Powerup(bs.Actor): #By Desire
         elif powerupType == 'banana':
             tex = factory.texBanana
             name = "| | Banana | |"
+        elif powerupType == 'curseBomb': 
+          tex = factory.texcurseBomb
+          name = "| | CurseBomb | |"          
         elif powerupType == 'elonMine': 
           tex = factory.texElonMuskMine
           name = "| | Traker | |"
@@ -310,7 +311,7 @@ class Powerup(bs.Actor): #By Desire
             name = "| | Party | |"          
         elif powerupType == 'Bunny':
             tex = factory.texBunny
-            name = "| | Bot | |"          
+            name = "| | Bot | |"                     
         elif powerupType == 'Rchar':
             tex = factory.texRchar
             name = "| | Rchar | |"  
@@ -336,11 +337,14 @@ class Powerup(bs.Actor): #By Desire
                    'reflection':'powerup',
                    'reflectionScale':[1.0],
                    'materials':(factory.powerupMaterial,
-                                bs.getSharedObject('objectMaterial'))})
-
+                                bs.getSharedObject('objectMaterial'))})     
+                          
         prefixAnim = {0: (1, 0, 0), 250: (1, 1, 0), 250 * 2: (0, 1, 0), 250 * 3: (0, 1, 1), 250 * 4: (1, 0, 1),
                       250 * 5: (0, 0, 1), 250 * 6: (1, 0, 0)}
         color = (1,1,1)
+
+        if self.powerupType == 'Bunny':    
+            self.node.model = factory.bunnymodel      
         if hack.nameOnPowerUps:
             m = bs.newNode('math', owner=self.node, attrs={'input1': (0, 0.7, 0), 'operation': 'add'})
             self.node.connectAttr('position', m, 'input2')
@@ -386,7 +390,7 @@ class Powerup(bs.Actor): #By Desire
         if hack.powerupTimer:
             self.powerupHurt = bs.newNode('shield', owner=self.node, attrs={'color':(1,1,1), 'radius':0.1, 'hurt':1, 'alwaysShowHealthBar':True})
             self.node.connectAttr('position',self.powerupHurt, 'position')
-            bs.animate(self.powerupHurt, 'hurt', {0:0, defaultPowerupInterval-1000:1})          
+            bs.animate(self.powerupHurt, 'hurt', {0:0, defaultPowerupInterval-1000:1})        
         # animate in..
         curve = bs.animate(self.node,"modelScale",{0:0,140:1.6,200:1})
         bs.gameTimer(200,curve.delete)

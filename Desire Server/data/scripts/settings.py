@@ -17,12 +17,12 @@ showTextsInBottom = False
 
 allow = True #for setchat
 
-messageList = ['Use /em To use emote','Use Help To get helped','Script By Desire']
+messageList = ['Use /help to get Helped','Use /em to use emote',' Remember to join Discord server','Script By Desire Join Discord For link']
 chatMessageTime = 90 #in seconds 
 
-gameTexts = ['Welcome To Blitz Server','Use "/shop commands" to see commands available to buy.','Use "/shop effects" to see effects available and their price.','Use "/me" or "/stats" to see your '+bs.getSpecialChar('ticket')+' and your stats in this server', 'Use "/buy" to buy effects that you like','Use "/donate" to give some of your tickets to other players','Use "/scoretocash" to convert some of your score to '+bs.getSpecialChar('ticket')+'\nCurrent Rate: 5scores = '+bs.getSpecialChar('ticket')+'1']
+gameTexts = ['Welcome To Desire Server','Use "/shop commands" to see commands available to buy.','Use "/shop effects" to see effects available and their price.','Use "/me" or "/stats" to see your '+bs.getSpecialChar('ticket')+' and your stats in this server', 'Use "/buy" to buy effects that you like','Use "/donate" to give some of your tickets to other players','Use "/scoretocash" to convert some of your score to '+bs.getSpecialChar('ticket')+'\nCurrent Rate: 5scores = '+bs.getSpecialChar('ticket')+'1']
 
-questionDelay = 90 #60 #seconds
+questionDelay = 2 #60 #seconds
 questionsList = {'Which virus is spreading currently?': 'corona', 'Which country Corona is originated?': 'china', 'Effiel Tower is located in which city?': 'paris', 'Largest Planet in our solar system?': 'jupiter',
        'add': None, 
        'multiply': None}

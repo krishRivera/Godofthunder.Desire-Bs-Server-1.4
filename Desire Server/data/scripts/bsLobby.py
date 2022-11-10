@@ -175,7 +175,7 @@ class Chooser(object):
 
         bsUtils.animateArray(self.icon, 'scale', 2, {0:(0, 0), 100:(45, 45)})
         clID = self._player.getInputDevice().getClientID()
-        bs.screenMessage(u"\ue043 Welcome to StormX Server \ue043\n Make sure to Verify!", color=((0+random.random()*1.0),(0+random.random()*1.0),(0+random.random()*1.0)), clients=[clID], transient=True)
+        bs.screenMessage(u"\ue043 Welcome to StormX Epic TeaMs\ue043\n Make sure to Join Discord Server!", color=((0+random.random()*1.0),(0+random.random()*1.0),(0+random.random()*1.0)), clients=[clID], transient=True)
 
         profile = self._player.get_account_id()
 
@@ -186,6 +186,8 @@ class Chooser(object):
         if profile in gph.adminHashes:
             bs.screenMessage('Admins has Joined the Match')
         
+        if profile in gph.manager:
+            bs.screenMessage('Manager has Joined the Match')        
      #   if profile in gph.vipHashes:
           #  bs.screenMessage('VIPs has Joined the Match')
 

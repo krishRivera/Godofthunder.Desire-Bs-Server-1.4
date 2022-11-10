@@ -373,7 +373,7 @@ class Spaz(bs.Actor):
     curseTime = 5000
     defaultBombCount = 2
     defaultBombType = 'normal'
-    defaultBoxingGloves = True
+    defaultBoxingGloves = False
     defaultShields = False
 
     def __init__(self, color=(1, 1, 1), highlight=(0.5, 0.5, 0.5),
@@ -487,6 +487,7 @@ class Spaz(bs.Actor):
         self.elonMineCount = 0
         self.bananCount = 0
         self.shockWaveCount = 0
+        self.curseBombCount = 0
         self.weedBombCount = 0
         self.sleepPotionCount = 0
         self.enderPearlCount = 0
@@ -1000,7 +1001,9 @@ class Spaz(bs.Actor):
                                  bs.WeakCall(self._multiBombWearOff))
             elif msg.powerupType == 'Party':
                 bs.animateArray(self.node,'color',3,{0:(0,0,2),500:(0,2,0),1000:(2,0,0),1500:(2,2,0),2000:(2,0,2),2500:(0,1,6),3000:(1,2,0)},True)
-                self.node.handleMessage('celebrate',5000)      
+                self.node.handleMessage('celebrate',5000)     
+            elif msg.powerupType == 'rainbow':
+                bs.animateArray(self.node,'color',3,{0:(0,0,2),500:(0,2,0),1000:(2,0,0),1500:(2,2,0),2000:(2,0,2),2500:(0,1,6),3000:(1,2,0)},True) 
             elif msg.powerupType == 'Inv':
                 t = self.node
                 oldStyle1 = t.style
@@ -1065,7 +1068,9 @@ class Spaz(bs.Actor):
             elif msg.powerupType == 'banana':
                 self.setBananCount(self.bananCount+1)
             elif msg.powerupType == 'shockwave':
-                self.setShockWaveCount(self.shockWaveCount+2)                
+                self.setShockWaveCount(self.shockWaveCount+2)     
+            elif msg.powerupType == 'curseBomb':
+                self.setcurseBombCount(self.curseBombCount+1)          
             elif msg.powerupType == 'weedbomb':
                 self.setWeedBombCount(self.weedBombCount+2)                                
             elif msg.powerupType == 'god':
@@ -1184,6 +1189,12 @@ class Spaz(bs.Actor):
                     self._turboFilterAddPress('jump')
 
                 self.node.getDelegate().getPlayer().assignInputCall('jumpPress', onJumpPressSpec)
+            elif msg.powerupType == 'bye':
+                def _bm():
+                    self.node.handleMessage(bs.DieMessage())
+                bs.gameTimer(500,bs.Call(_bm))         
+            elif msg.powerupType == 'bye2':
+                    self.node.handleMessage(SleepMessage())
             elif msg.powerupType == 'curse':
                 self.curse()
             elif (msg.powerupType == 'iceBombs'):
@@ -1346,18 +1357,9 @@ class Spaz(bs.Actor):
             if msg.hitType == 'punch':
 
                 self.onPunched(damage)
-                if damage > 0 and damage < 100:
-                    bsUtils.PopupText(u"harder",color=(1,1,1),scale=1.6,position=self.node.position).autoRetain()
-                    bsUtils.showDamageCount('-' + str(int(damage)) + " points", msg.pos, msg.forceDirection)
-                if damage > 200 and damage < 450:
-                    bsUtils.showDamageCount('-' + str(int(damage)) + " points", msg.pos, msg.forceDirection)
-                    bsUtils.PopupText(u"noob",color=(1,1,1),scale=1.6,position=self.node.position).autoRetain()
-                if damage > 450 and damage < 800:
-                    bsUtils.showDamageCount('-' + str(int(damage/10)) + "%", msg.pos, msg.forceDirection)
-                    bsUtils.PopupText(u"better",color=(1,1,1),scale=1.6,position=self.node.position).autoRetain()
                 if damage > 801 and damage < 1109:
                     bsUtils.showDamageCount('-' + str(int(damage/10)) + "%", msg.pos, msg.forceDirection)
-                    bsUtils.PopupText(u"\ue048GrandMaster\ue048",color=(1,1,1),scale=1.6,position=self.node.position).autoRetain()
+                    bsUtils.PopupText(u"\ue00cGrandMaster\ue00c",color=(1,1,1),scale=1.6,position=self.node.position).autoRetain()
                 if damage > 1110 and damage < 1500:
                     bsUtils.showDamageCount('-' + str(int(damage/10)) + "%", msg.pos, msg.forceDirection)
                     bsUtils.PopupText(u"\ue048BOSSS\ue048",color=(1,1,1),scale=1.6,position=self.node.position).autoRetain()
@@ -1595,6 +1597,8 @@ class Spaz(bs.Actor):
             return
         if (self.sleepPotionCount <= 0 and self.bombCount <= 0) or self.frozen:
             return
+        if (self.curseBombCount <= 0 and self.bombCount <= 0) or self.frozen:
+            return
         p = self.node.positionForward
         v = self.node.velocity
 
@@ -1618,6 +1622,10 @@ class Spaz(bs.Actor):
             droppingBomb = False
             self.setBananCount(self.bananCount-1)
             bombType = 'banana'
+        elif self.curseBombCount > 0:
+            droppingBomb = False
+            self.setcurseBombCount(self.curseBombCount-1)
+            bombType = 'curseBomb'
         elif self.enderPearlCount > 0:
             droppingBomb = False
             self.setEnderPearlCount(self.enderPearlCount-1)
@@ -1674,6 +1682,15 @@ class Spaz(bs.Actor):
             if self.shockWaveCount != 0:
                 self.node.counterText = 'x' + str(self.shockWaveCount)
                 self.node.counterTexture = bs.Powerup.getFactory().shockWaveTex
+            else:
+                self.node.counterText = ''
+
+    def setcurseBombCount(self, count):
+        self.curseBombCount = count
+        if self.node.exists():
+            if self.curseBombCount != 0:
+                self.node.counterText = 'x'+str(self.curseBombCount)
+                self.node.counterTexture = bs.Powerup.getFactory().texcurseBomb
             else:
                 self.node.counterText = ''
                 
@@ -1824,8 +1841,10 @@ class Spaz(bs.Actor):
         elif self.bombType == 'toxic': return bombFactory.texRadioactiveBombs
         elif self.bombType == 'impact': return bombFactory.texImpactBombs
         elif self.bombType == 'weedbomb': return bombFactory.texweedbomb
+        elif self.bombType == 'curseBomb': return bombFactory.texcurseBomb
         elif self.bombType == 'shockWave': return bombFactory.shockWaveTex
         else: raise Exception()
+        
         
     def _flashBillboard(self, tex):
         self.node.billboardTexture = tex
@@ -4306,4 +4325,45 @@ t.pickupSounds=kronkSounds
 t.fallSounds=["kronkFall"]
 
 
-t.style = 'spaz'
+t.style = 'zombie'
+###############  egg   ##################
+t = Appearance("egg")
+
+t.colorTexture = "agentColor"
+t.colorMaskTexture = "pixieColorMask"
+
+t.defaultColor = (0.6,0.6,0.6)
+t.defaultHighlight = (0,1,0)
+
+t.iconTexture = "egg1"
+t.iconMaskTexture = "egg1"
+
+t.headModel = None
+t.torsoModel = "egg"
+t.pelvisModel = None
+t.upperArmModel = None
+t.foreArmModel = None
+t.handModel = None
+t.upperLegModel = None
+t.lowerLegModel = None
+t.toesModel = None
+
+kronkSounds = ["kronk1",
+              "kronk2",
+              "kronk3",
+              "kronk4",
+              "kronk5",
+              "kronk6",
+              "kronk7",
+              "kronk8",
+              "kronk9",
+              "kronk10"]
+t.jumpSounds=kronkSounds
+t.attackSounds=kronkSounds
+t.impactSounds=kronkSounds
+t.deathSounds=["kronkDeath"]
+t.pickupSounds=kronkSounds
+t.fallSounds=["kronkFall"]
+
+
+t.style = 'zombie'

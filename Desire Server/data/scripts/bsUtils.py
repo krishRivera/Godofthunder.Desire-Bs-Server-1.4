@@ -1345,7 +1345,7 @@ def getGameTypes():
             allGames += module.bsGetGames()
     return allGames
 
-gTips = ["Made By V I V E K","V I V E K Server Script"]
+gTips = ["Made By Desire","Desire Server Script"]
 
 def _getNextTip():
     """ returns the next tip to be displayed """

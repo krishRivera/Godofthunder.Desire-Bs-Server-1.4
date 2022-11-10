@@ -2,11 +2,6 @@
 import bs
 from bsMap import *
 import bsMap
-import bsInternal
-import json
-import love
-
-num = 0
 
 def __init__(self, vrOverlayCenterOffset=None):
         """
@@ -18,12 +13,12 @@ def __init__(self, vrOverlayCenterOffset=None):
         def text():
                 #bySoby
                 t = bs.newNode('text',
-                       attrs={ 'text':u'\ue00cWelcome To StormX Epic Teams\ue00c\nMake Sure To Join Discord Server',
+                       attrs={ 'text':u'Welcome To StormX Epic TeaMs\n\ue00cMake Sure To Join Discord Server\ue00c',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
-                              'shadow':0,
-                              'flatness':1.2,
+                              'shadow':0.5,
+                              'flatness':1.0,
                               'color':(1,1,1),
                               'hAlign':'center',
                               'vAttach':'bottom'})
@@ -31,12 +26,12 @@ def __init__(self, vrOverlayCenterOffset=None):
                 bs.gameTimer(7000,t.delete)
                 ##
                 t = bs.newNode('text',
-                       attrs={ 'text':u'Use /em to use Emote & /help to get Helped',
+                       attrs={ 'text':u'You can drop your complaints and suggestions in discord Server',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
-                              'shadow':0,
-                              'flatness':1.2,
+                              'shadow':0.5,
+                              'flatness':1.0,
                               'color':(1,1,1),
                               'hAlign':'center',
                               'vAttach':'bottom'})
@@ -44,37 +39,37 @@ def __init__(self, vrOverlayCenterOffset=None):
                 bs.gameTimer(15000,t.delete)
                 #bySoby
                 t = bs.newNode('text',
-                       attrs={ 'text':u'Kindness is a language which the deaf can hear \n and the blind can see',
+                       attrs={ 'text':u'You can apply for moderator in discord Server',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
-                              'shadow':0,
-                              'flatness':1.2,
+                              'shadow':0.5,
+                              'flatness':1.0,
                               'color':(1,1,1),
                               'hAlign':'center',
                               'vAttach':'bottom'})
                 bs.animate(t,'opacity',{17500: 0.0,18500: 1.0,24500: 1.0,25000: 0.0})
                 bs.gameTimer(25000,t.delete)
-                #bySoby..............................Dont Edit This
+                #bySoby
                 t = bs.newNode('text',
-                       attrs={ 'text':u'Respect others and play well And No teaming',
+                       attrs={ 'text':u'Use /em to use Emote , /rules to check rules & /help to get Helped',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
-                              'shadow':0,
-                              'flatness':1.2,
+                              'shadow':0.5,
+                              'flatness':1.0,
                               'color':(1,1,1),
                               'hAlign':'center',
                               'vAttach':'bottom'})
                 bs.animate(t,'opacity',{27000: 0.0,27500: 1.0,33500: 1.0,34000: 0.0})
                 bs.gameTimer(34000,t.delete)
                 t = bs.newNode('text',
-                       attrs={ 'text':u'Script By Desire | | Link :- https://github.com/Sudo-Desier/Desire-Bs-Server-1.4',
+                       attrs={ 'text':u'Join Discord server from server status button',
                               'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
-                              'shadow':0,
-                              'flatness':1.2,
+                              'shadow':0.5,
+                              'flatness':1.0,
                               'color':(1,1,1),
                               'hAlign':'center',
                               'vAttach':'bottom'})
@@ -86,8 +81,8 @@ def __init__(self, vrOverlayCenterOffset=None):
                                'scale':0.9,
                               'maxWidth':0,
                               'position':(0,138),
-                              'shadow':0,
-                              'flatness':1.2,
+                              'shadow':0.5,
+                              'flatness':1.0,
                               'color':(1,1,1),
                               'hAlign':'center',
                               'vAttach':'bottom'})
@@ -95,48 +90,7 @@ def __init__(self, vrOverlayCenterOffset=None):
                 bs.gameTimer(51000,t.delete)
         bs.gameTimer(3500,bs.Call(text))
         bs.gameTimer(56000,bs.Call(text),repeat = True)
-        def stats_shower():
-            global num
-            global scr
-            p_list = []
-            n_list = []
-            s_list = []
-            s_itr = iter(s_list)
-            for i in bsInternal._getForegroundHostSession().players:
-                Name = i.getName()
-                n_list.append(Name)
-                pb_id = i.get_account_id()
-                p_list.append(pb_id)
-            f = open(bs.getEnvironment()['systemScriptsDirectory'] + "/pStats.json", "r")
-            stats = json.loads(f.read())
-            for p in range(int(len(p_list))):
-                if p_list[p] in stats:
-                    player_stat = stats[str(p_list[p])]
-                    s_msg = str(n_list[p].encode("utf-8"))+"'s Stats This Season:\n"+"Rank "+str(player_stat["rank"])+", "+str(player_stat["scores"]) + " scores, " + str(player_stat["kills"]) + " kills, " + str(player_stat["deaths"]) + " deaths."
-                    s_list.append(s_msg)
-                else:
-                    s_msg = str((n_list[p].encode("utf-8")))+"Is not Registered"
-                    s_list.append(s_msg)
-            p = bs.newNode('text',
-                       attrs={ 'text':love.credit,
-                              'scale':1.0,
-                              'maxWidth':0,
-                              'position':(1,5),
-                              'shadow':0.5,
-                              'flatness':1.0,
-                              'color':(1,1,1),
-                              'hAlign':'center',
-                              'vAttach':'bottom'})
-            
-            if num < len(s_list):
-                num+= 1
-            if num == len(s_list):
-                num*= 0
-            if num > len(s_list):
-                num*= 0
-        bs.gameTimer(3000,bs.Call(stats_shower))
-        bs.gameTimer(10000,bs.Call(stats_shower),repeat = True)
-
+        
         vrMode = bs.getEnvironment()['vrMode']
 
         if not bs.getEnvironment().get('toolbarTest',True):
@@ -146,12 +100,13 @@ def __init__(self, vrOverlayCenterOffset=None):
                                                          'hAlign':'center',
                                                          'vrDepth': 0,
                                                          'color':(1,1,1),
-                                                         'flatness':0,
+                                                         'flatness':0.5,
                                                          'shadow':0,
                                                          'scale':1,
                                                          'position':(1,-35),
-                                                         'text':u'\U0001F329StormX Epic TeaMs\U0001F329\n\ue00c||Owned & Edited By Desire\ue00c||'}))    #adjust per name
+                                                         'text':u'\U0001F329StormX Epic TeaMs\U0001F329\n\ue00c||Owned & Edited By Desire||\ue00c'}))    #adjust per name
                 
+        
         # set some defaults
         bsGlobals = bs.getSharedObject('globals')
         # area-of-interest bounds

@@ -136,6 +136,7 @@ class BombFactory(object):
         self.sleepPotionModel = bs.getModel('bomb')
         self.shockWaveModel = bs.getModel("impactBomb")
         self.enderPearlModel = bs.getModel('bomb')
+        self.curseBombModel = bs.getModel('bonesHead')
         self.elonMineModel = bs.getModel('landMine')
         self.weedbombModel = bs.getModel('frostyHead')
         self.tntModel = bs.getModel('tnt')
@@ -151,6 +152,7 @@ class BombFactory(object):
         self.sleepPotionTex = bs.getTexture('powerupShield')
         self.bananaTex = bs.getTexture("bombStickyColor")
         self.shockWaveTex = bs.getTexture("rgbStripes")
+        self.curseBombTex = bs.getTexture('powerupCurse')
         self.landMineTex = bs.getTexture('landMine')
         self.landMineLitTex = bs.getTexture('landMineLit')
         self.elonMineTex = bs.getTexture('achievementCrossHair')
@@ -352,11 +354,24 @@ class Blast(bs.Actor):
         
         # and emit some shrapnel..
         if self.blastType == 'ice':
-            def _doEmit():
-                bs.emitBGDynamics(position=position, velocity=velocity,
-                                  count=30, spread=2.0, scale=0.4,
-                                  chunkType='ice', emitType='stickers');
-            bs.gameTimer(50, _doEmit) # looks better if we delay a bit
+            def _doEmit():    
+                try:
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=5,scale=3.5,chunkType='ice',emitType='stickers');
+                    #bs.emitBGDynamics(position=position,emitType='distortion',spread=6,count = 100);
+                except:
+                    pass
+            bs.gameTimer(50,_doEmit) # looks better if we delay a bit
 
         elif self.blastType == 'banana':
             def _doEmit():
@@ -391,22 +406,23 @@ class Blast(bs.Actor):
             bs.gameTimer(50,_doEmit)
 
         elif self.blastType == 'sticky':
-            def _doEmit():
-                bs.emitBGDynamics(position=position, velocity=velocity,
-                                  count=int(4.0+random.random()*8),
-                                  spread=0.7,chunkType='slime');
-                bs.emitBGDynamics(position=position, velocity=velocity,
-                                  count=int(4.0+random.random()*8), scale=0.5,
-                                  spread=0.7,chunkType='slime');
-                bs.emitBGDynamics(position=position, velocity=velocity,
-                                  count=15, scale=0.6, chunkType='slime',
-                                  emitType='stickers');
-                bs.emitBGDynamics(position=position, velocity=velocity,
-                                  count=20, scale=0.7, chunkType='spark',
-                                  emitType='stickers');
-                bs.emitBGDynamics(position=position, velocity=velocity,
-                                  count=int(6.0+random.random()*12),
-                                  scale=0.8, spread=1.5,chunkType='spark');
+            def _doEmit():    
+                try:
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    bs.emitBGDynamics(position=(position[0]-1+random.random()*2,position[1]+random.random(),position[2]-1+random.random()*2),velocity=(0,0,0),count=1,scale=3.5,chunkType='slime',emitType='stickers');
+                    #bs.emitBGDynamics(position=position,emitType='distortion',spread=6,count = 100);
+                except:
+                    pass
             bs.gameTimer(50,_doEmit) # looks better if we delay a bit
 
         elif self.blastType == 'impact': # regular bomb shrapnel
@@ -425,21 +441,37 @@ class Blast(bs.Actor):
                                   spread=1.5, chunkType='spark');
             bs.gameTimer(50,_doEmit) # looks better if we delay a bit
 
-        elif self.blastType == 'shockWave':
+        elif self.blastType == 'curseBomb':  # regular bomb shrapnel
             def _doEmit():
                 bs.emitBGDynamics(position=position, velocity=velocity,
-                                  count=int(4.0+random.random()*8),
-                                  scale=0.8, chunkType='metal');
+                                  count=int(4.0 + random.random() * 8), scale=0.8,
+                                  chunkType='metal');
+                bs.emitBGDynamics(position=position, velocity=velocity,
+                                  count=int(4.0 + random.random() * 8), scale=0.4,
+                                  chunkType='metal');
                 bs.emitBGDynamics(position=position, velocity=velocity,
                                   count=20, scale=0.7, chunkType='spark',
                                   emitType='stickers');
+                bs.emitBGDynamics(position=position, velocity=velocity,
+                                  count=int(8.0 + random.random() * 15), scale=0.8,
+                                  spread=1.5, chunkType='spark');
 
-                f = bs.newNode('flash', attrs={
-                    'position': position,
-                    'size': 0.5,
-                    'color': (0.6, 0.6, 1-random.random()*0.2)})
-
-                bs.gameTimer(60, f.delete)
+            bs.gameTimer(50, _doEmit)  # looks better if we delay a bit
+            
+        elif self.blastType == 'shockWave':  # regular bomb shrapnel
+            def _doEmit():
+                bs.emitBGDynamics(position=position, velocity=velocity,
+                                  count=int(4.0 + random.random() * 8), scale=0.8,
+                                  chunkType='metal');
+                bs.emitBGDynamics(position=position, velocity=velocity,
+                                  count=int(4.0 + random.random() * 8), scale=0.4,
+                                  chunkType='metal');
+                bs.emitBGDynamics(position=position, velocity=velocity,
+                                  count=20, scale=0.7, chunkType='spark',
+                                  emitType='stickers');
+                bs.emitBGDynamics(position=position, velocity=velocity,
+                                  count=int(8.0 + random.random() * 15), scale=0.8,
+                                  spread=1.5, chunkType='spark');
 
             bs.gameTimer(50, _doEmit)
 
@@ -499,8 +531,6 @@ class Blast(bs.Actor):
             bs.gameTimer(50,_doEmit) # looks better if we delay a bit
         if self.blastType == 'banana':
             color = (1, 1, 0)
-        elif self.blastType == 'shockWave':
-                color = (3, 3, 6)            
 
         light = bs.newNode('light', attrs={
             'position':position,
@@ -590,6 +620,7 @@ class Blast(bs.Actor):
                 elif self.blastType == 'sleepPotion': mag *= 0.1
                 elif self.blastType == 'toxic': mag *= 0.5
                 elif self.blastType == 'weedbomb': mag*= 0.5
+                elif self.blastType == 'curseBomb': mag*= 0.0
                 elif self.blastType == 'tnt': mag *= 2.0
 
                 node.handleMessage(bs.HitMessage(
@@ -630,7 +661,10 @@ class Blast(bs.Actor):
                     bs.gameTimer(1460,bs.Call(look))
                     bs.gameTimer(2960,bs.Call(look))
                     bs.gameTimer(5460,bs.Call(look))
-                    bs.gameTimer(7960,bs.Call(look))                    
+                    bs.gameTimer(7960,bs.Call(look))        
+                elif self.blastType == "curseBomb":
+                    node.handleMessage(bs.PowerupMessage(powerupType='curse'))
+
         else:
             bs.Actor.handleMessage(self, msg)
 
@@ -656,7 +690,7 @@ class Bomb(bs.Actor):
         self.aim = None
         factory = self.getFactory()
 
-        if not bombType in ('ice','impact','landMine','normal','banana','sleepPotion','forceBomb','toxic','enderPearl','elonMine','sticky','tnt','weedbomb','shockWave'):
+        if not bombType in ('ice','impact','landMine','normal','banana','sleepPotion','forceBomb','toxic','enderPearl','elonMine','sticky','tnt','weedbomb','shockWave','curseBomb'):
             raise Exception("invalid bomb type: " + bombType)
         self.bombType = bombType
 
@@ -716,7 +750,7 @@ class Bomb(bs.Actor):
             materials = (factory.bombMaterial,
                          bs.getSharedObject('objectMaterial'))
             
-        if self.bombType in ['impact','sleepPotion','banana','enderPearl','weedbomb','shockWave']:
+        if self.bombType in ['impact','sleepPotion','banana','enderPearl','weedbomb','shockWave','curseBomb']:
             materials = materials + (factory.impactBlastMaterial,)
         elif self.bombType in ['landMine','elonMine']:
             materials = materials + (factory.landMineNoExplodeMaterial,)
@@ -782,6 +816,19 @@ class Bomb(bs.Actor):
                 'reflection': 'powerup',
                 'reflectionScale': [1.5],
                 'materials': materials})           
+
+        elif self.bombType == 'curseBomb':
+            fuseTime = 20000
+            self.node = bs.newNode('prop', delegate=self, attrs={
+                'position': position,
+                'velocity': velocity,
+                'body': 'sphere',
+                'model': factory.curseBombModel,
+                'shadowSize': 0.3,
+                'colorTexture': factory.curseBombTex,
+                'reflection': 'soft',
+                'reflectionScale': [0.5],
+                'materials': materials})
                 
         elif self.bombType == 'forceBomb':
             self.node = bs.newNode('prop', delegate=self, owner=owner, attrs={
@@ -1029,6 +1076,7 @@ class Bomb(bs.Actor):
             elif (self.bombType == 'enderPearl' and (node is self.owner or (isinstance(nodeDelegate,Bomb) and nodeDelegate.bombType == 'enderPearl' and nodeDelegate.owner is self.owner))): return
             elif (self.bombType == 'sleepPotion' and (node is self.owner or (isinstance(nodeDelegate,Bomb) and nodeDelegate.bombType == 'sleepPotion' and nodeDelegate.owner is self.owner))): return
             elif (self.bombType == 'weedbomb' and (node is self.owner or (isinstance(nodeDelegate,Bomb) and nodeDelegate.bombType == 'weedbomb' and nodeDelegate.owner is self.owner))): return
+            elif (self.bombType == 'curseBomb' and (node is self.owner or (isinstance(nodeDelegate,Bomb) and nodeDelegate.bombType == 'curseBomb' and nodeDelegate.owner is self.owner))): return
             else:
                 self.handleMessage(ExplodeMessage())
 
@@ -1178,7 +1226,7 @@ class Bomb(bs.Actor):
         # normal bombs are triggered by non-punch impacts..
         # impact-bombs by all impacts
         if (not self._exploded and not isPunch
-            or self.bombType in ['impact', 'landMine', 'elonMine','weedbomb']):
+            or self.bombType in ['impact', 'landMine', 'elonMine','weedbomb','curseBomb']):
             # also lets change the owner of the bomb to whoever is setting
             # us off.. (this way points for big chain reactions go to the
             # person causing them)

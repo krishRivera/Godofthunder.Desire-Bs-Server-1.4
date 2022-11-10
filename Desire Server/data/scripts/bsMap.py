@@ -7,7 +7,7 @@ import hack
 if hack.nightMode:
     Tint = (0.5,0.7,1)
 else:
-    Tint = (1,1,1)
+    Tint = (1.2,1.3,1.33)
 _maps = {}
 
 def preloadPreviewMedia():
@@ -339,9 +339,6 @@ class HockeyStadium(Map):
         data['collideModel'] = bs.getCollideModel('hockeyStadiumCollide')
         data['tex'] = bs.getTexture('hockeyStadium')
         data['standsTex'] = bs.getTexture('footballStadium')
-        m = bs.Material()
-        m.addActions(actions=('modifyPartCollision', 'friction',0.01))
-        data['iceMaterial'] = m
         return data
     
     def __init__(self):
@@ -350,8 +347,7 @@ class HockeyStadium(Map):
             'model':self.preloadData['models'][0],
             'collideModel':self.preloadData['collideModel'],
             'colorTexture':self.preloadData['tex'],
-            'materials':[bs.getSharedObject('footingMaterial'),
-                         self.preloadData['iceMaterial']]})
+            'materials':[bs.getSharedObject('footingMaterial')]})
         bs.newNode('terrain', attrs={
             'model':self.preloadData['vrFillModel'],
             'vrOnly':True,
@@ -361,16 +357,16 @@ class HockeyStadium(Map):
         self.floor = bs.newNode("terrain", attrs={
             "model":self.preloadData['models'][1],
             "colorTexture":self.preloadData['tex'],
-            "opacity":0.92,
+            "color":(0.1,0.51,0.06),
+            "opacity":1,
             "opacityInLowOrMediumQuality":1.0,
-            "materials":[bs.getSharedObject('footingMaterial'),
-                         self.preloadData['iceMaterial']]})
+            'materials':[bs.getSharedObject('footingMaterial')]})
         self.stands = bs.newNode("terrain", attrs={
             "model":self.preloadData['models'][2],
-            "visibleInReflections":False,
+            "visibleInReflections":True,
             "colorTexture":self.preloadData['standsTex']})
         bsGlobals = bs.getSharedObject('globals')
-        bsGlobals.floorReflection = True
+        bsGlobals.floorReflection = False
         bsGlobals.debrisFriction = 0.3
         bsGlobals.debrisKillHeight = -0.3
         bsGlobals.tint = Tint
@@ -379,7 +375,7 @@ class HockeyStadium(Map):
         bsGlobals.vignetteInner = (0.93,0.93,0.95)
         bsGlobals.vrCameraOffset = (0,-0.8,-1.1)
         bsGlobals.vrNearClip = 0.5
-        self.isHockey = True
+        self.isHockey = False
         
 registerMap(HockeyStadium)
 

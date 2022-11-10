@@ -5,8 +5,6 @@ import weakref
 import random
 import bsUtils
 import time
-import pytz
-import datetime
 import settings
 
 class Team(object):
@@ -1598,6 +1596,20 @@ class Activity(object):
         """
         self._calledActivityOnBegin = True
 
+        vrMode = bs.getEnvironment()['vrMode']
+        if not bs.getEnvironment().get('toolbarTest',True):
+            self.modpack = bs.NodeActor(bs.newNode('text',
+                                                  attrs={'vAttach':'bottom',
+                                                         'hAttach':'center',
+                                                         'hAlign':'center',
+                                                         'vrDepth': 0,
+                                                         'color':(1,1,1),
+                                                         'flatness':0.5,
+                                                         'shadow':0,
+                                                         'scale':0.9,
+                                                         'position':(1,5),
+                                                         'text':u'\ue00cScript By Desire\ue00c'}))    #adjust per name
+
     def onContinue(self):
         """
         This is called if a game supports and offers a continue and the player
@@ -2214,11 +2226,6 @@ class GameActivity(Activity):
         if self._map is None:
             raise Exception(
                 "getMap() cannot be called until after onTransitionIn()")
-        now=datetime.datetime.now(pytz.timezone('Asia/Calcutta')).time()
-        nightstart=now.replace(hour=19,minute=30)
-        nightend=now.replace(hour=6)    
-        if(now>nightstart or now<nightend):
-             bs.getSharedObject('globals').tint = (0.5,0.7,1)
         return self._map
 
     def getInstanceDisplayString(self):

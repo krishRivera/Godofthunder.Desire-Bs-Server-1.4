@@ -26,7 +26,7 @@ class Icon(bsElimination.Icon):
 class PowBox(bsBomb.Bomb):
     def __init__(self, position=(0, 1, 0), velocity=(0, 0, 0)):
         bsBomb.Bomb.__init__(self, position, velocity,
-                        bombType='tnt', blastRadius=7.5,
+                        bombType='tnt', blastRadius=2.5,
                         sourcePlayer=None, owner=None)
         self.setPowText()
 
@@ -356,7 +356,12 @@ class SuperSmash(bs.TeamGameActivity):
         return [("Time Limit", {'choices':[('None', 0), ('1 Minute', 60), ('2 Minutes', 120),
                                             ('5 Minutes', 300)], 'default': 0}),
                 ("Lives (0 = Unlimited)", {'minValue': 0, 'default': 3, 'increment': 1}),
-                ("Epic Mode", {'default': False})]
+                ("Respawn Times", {
+                'choices': [('Shorter', 0.25), ('Short', 0.5), ('Normal', 1.0),
+                            ('Long', 2.0), ('Longer', 4.0)],
+                'default': 1.0
+            }),
+                ("Epic Mode", {'default': True})]
 
     def __init__(self, settings):
         bs.TeamGameActivity.__init__(self, settings)
@@ -391,7 +396,7 @@ class SuperSmash(bs.TeamGameActivity):
                                                          'shadow':1,
                                                          'scale':0.6,
                                                          'position':(10,5),
-                                                         'text':u'\ue048Bolt Super Smash\ue048 \nSubscribe to Lucky singh Vlog'}))
+                                                         'text':u''}))
 		
     def onBegin(self):
         bs.TeamGameActivity.onBegin(self)
@@ -429,13 +434,13 @@ class SuperSmash(bs.TeamGameActivity):
             self.spawnPlayer(player)
 
         # dont waste time doing this until begin
-    '''
+    
     def _update(self):
         # if we're down to 1 or fewer living teams, start a timer to end the game
         # (allows the dust to settle and draws to occur if deaths are close enough)
         if len(self._getLivingTeams()) < 2:
             self._roundEndTimer = bs.Timer(500,self.endGame)
-    '''
+    
     def onPlayerLeave(self, player):
         bs.TeamGameActivity.onPlayerLeave(self, player)
 
