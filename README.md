@@ -90,7 +90,7 @@ Discord :- Desire#2365
 
 - made already made commands easy to use
 
-*This one is last time iam updating this script*
+*This is last time iam updating this script*
 
 # Thanks
 
