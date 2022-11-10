@@ -1,10 +1,10 @@
 <h1>INFORMATION</h1>
 
 [![MPL License](https://img.shields.io/badge/License-MPL-green.svg)](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0-red.svg)](https://youtu.be/dQw4w9WgXcQ)
+[![Version](https://img.shields.io/badge/Version-1.5-red.svg)](https://youtu.be/dQw4w9WgXcQ)
 
 Hey, I finished my server files. They contain a Ankit's awesome admin system, chat commands, powerups and cool configurations.
-Easy Server Management Now you don't need to open settings file to change small settings you can do it while staying inside game using settings commands commands info given ![here](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/COMMANDS.md)
+Easy Server Management Now you don't need to open settings file to change small settings you can do it while staying inside game using settings commands commands more info given ![here](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/COMMANDS.md)
 
 <h2>SETUP</h2>
 Just Download and Add this Files to Your server 
@@ -13,9 +13,6 @@ Just Download and Add this Files to Your server
 
 - `sudo apt-get update`
 - `sudo apt-get install python libsdl2-2.0-0 libpython2.7`
-- `sudo su`
-- `apt install python-pip`
-- ` sudo pip install pytz`
 - `cd Desire Server`
 - `chmod 777 bs_headless`
 - `chmod 777 bombsquad_server`
@@ -23,17 +20,9 @@ Just Download and Add this Files to Your server
 - `tmux`
 - `./bombsquad_server`
 
-Every single Command is required 
-
-**To use Auto night mode replace bsMap.py with vanilla version of bsMap.py**
-
 # Requirements
 
 1. Brain
-2. Ubuntu 18 (If you want to use auto night mode)
-3. ubuntu 20 or less ( if don't wanna use auto night mode)
-That's it i recommend you to use ubuntu 18
-Thank you
 
 **Having Problem?**
 **Got A Bug?**
@@ -50,6 +39,8 @@ Discord :- Desire#2365
 
 - [x] New Commands For Owner 
 
+- [x] New Role Manager 
+
 - [x] New Commands For Admin&Vip
 
 - [x] Spam protection 
@@ -63,10 +54,6 @@ Discord :- Desire#2365
 - [x] Name filter 
 
 - [x] Powerups
-
-- [x] Auto Night mod
-
-*Note :- You cannot use auto night mode with always night mode you need you turn one off*
 
 # Powerups
 
@@ -86,11 +73,24 @@ Discord :- Desire#2365
 |   ![bot](https://cdn.discordapp.com/attachments/1009755282265604198/1036922316334059541/IMG_20221101_135757.jpg)   |  Bunny   | 
 |   ![char](https://cdn.discordapp.com/attachments/1009755282265604198/1036922369844981790/IMG_20221101_140616.jpg)   |  Rchar   |
 |   ![inv](https://cdn.discordapp.com/attachments/1009755282265604198/1036922369366839316/IMG_20221101_140215.jpg)   |  invisible | 
-|   ![shock](https://cdn.discordapp.com/attachments/1009755282265604198/1036922315654574100/IMG_20221101_135640.jpg)   |  Shockwave | 
+|   ![shock](https://cdn.discordapp.com/attachments/1009755282265604198/1036922315654574100/IMG_20221101_135640.jpg)   |  Shockwave |
+|   ![cursebomb](https://media.discordapp.net/attachments/1009755282265604198/1040233068474159155/Screenshot_2022-11-10-17-24-19-400-edit_net.froemling.bombsquad.jpg)   |  CurseBomb | 
 
-# Questions
-**What is Auto Night Mode?**
-Simply server will turn on Night mode aka Night vision at 6 or 7pm and it will automatically turn it off at 5-7am idk exact time
+# Changelog 1.5
+- Removed auto night mode 
+
+- Rip some bugs
+
+- New roles
+1. Egg support
+2. manager
+3. Cursed ( this is worse than ban)
+
+- more commands added
+
+- made already made commands easy to use
+
+*This one is last time iam updating this script*
 
 # Thanks
 
