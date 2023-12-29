@@ -103,4 +103,5 @@ Discord :- Desire#2365
 - Thanks To SobyDamn
 - Thanks To MythB
 - Thanks To egg 🥚
+- Thanks To Thor࿐
 - ok
