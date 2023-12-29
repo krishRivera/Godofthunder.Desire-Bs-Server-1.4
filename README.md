@@ -33,7 +33,7 @@ Just Download and Add this Files to Your server
 
 Discord :- Desire#2365
 
-*Happy BombSquading*
+*Happy BombSquading guys*
 
 # Features 
 
@@ -83,7 +83,7 @@ Discord :- Desire#2365
 
 - New roles
 1. Egg support
-2. manager
+2. Manager
 3. Cursed ( this is worse than ban)
 
 - more commands added
@@ -95,12 +95,11 @@ Discord :- Desire#2365
 # Thanks
 
 **Special Thanks To all Of them**
-- Thanks to Blitz 
-- Thanks To Pcmodder 
+- Thanks to Blitz
+- Thanks to Thor࿐
 - Thanks To MrSmoothy
 - Thanks to Bombdash creators 
 - Thanks To awesomeLogic
 - Thanks To SobyDamn
 - Thanks To MythB
-- Thanks To egg 🥚
 - ok
