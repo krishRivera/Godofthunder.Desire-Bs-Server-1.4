@@ -93,15 +93,12 @@ Discord :- Desire#2365
 
 *This is last time iam updating this script*
 
-# Thanks
+*<<<<Thanks>>>>*
 
 **Special Thanks To all Of them**
-- Thanks to Blitz 
-- Thanks To Pcmodder 
 - Thanks To MrSmoothy
 - Thanks to Thor
 - Thanks To awesomeLogic
-- Thanks To SobyDamn
 - Thanks To MythB
-- Thanks To egg 🥚
-- ok
+- Thanks To egg 
+- Thanks To ok
