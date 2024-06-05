@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/Version-1.5-red.svg)](https://youtu.be/dQw4w9WgXcQ)
 
 Hey, I finished my server files. They contain a Ankit's awesome admin system, chat commands, powerups and cool configurations.
-Easy Server Management Now you don't need to open settings file to change small settings you can do it while staying inside game using settings commands commands more info given ![here](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/COMMANDS.md)
+Easy Server Management Now you don't need to open settings file to change small settings you can do it while staying inside game using settings commands commands more info given ![here](https://github.com/Sudo-Desire/Desire-Bs-Server-1.4/blob/main/COMMANDS.md)
 
 <h2>SETUP</h2>
 Just Download and Add this Files to Your server 
@@ -32,6 +32,7 @@ Just Download and Add this Files to Your server
 **OR**
 
 Discord :- Desire#2365
+           krish._.rivera
 
 *Happy BombSquading*
 
@@ -98,7 +99,7 @@ Discord :- Desire#2365
 - Thanks to Blitz 
 - Thanks To Pcmodder 
 - Thanks To MrSmoothy
-- Thanks to Bombdash creators 
+- Thanks to Thor
 - Thanks To awesomeLogic
 - Thanks To SobyDamn
 - Thanks To MythB
