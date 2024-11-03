@@ -3,8 +3,8 @@
 [![MPL License](https://img.shields.io/badge/License-MPL-green.svg)](https://github.com/Sudo-Desier/Desire-Bs-Server-1.4/blob/main/LICENSE)
 [![Version](https://img.shields.io/badge/Version-1.5-red.svg)](https://youtu.be/dQw4w9WgXcQ)
 
-Hey, I finished my server files. They contain a Ankit's awesome admin system, chat commands, powerups and cool configurations.
-Easy Server Management Now you don't need to open settings file to change small settings you can do it while staying inside game using settings commands commands more info given ![here](https://github.com/Sudo-Desire/Desire-Bs-Server-1.4/blob/main/COMMANDS.md)
+Hey, I finished my server files. They contain awesome admin system, chat commands, powerups and cool configurations.
+Easy Server Management Now you don't need to open settings file to change small settings you can do it while staying inside game using settings commands commands more info given ![here](https://github.com/Godofthunder-Sudo-Desire/Desire-Bs-Server-1.4/blob/main/COMMANDS.md)
 
 <h2>SETUP</h2>
 Just Download and Add this Files to Your server 
@@ -27,14 +27,10 @@ Just Download and Add this Files to Your server
 **Having Problem?**
 **Got A Bug?**
 
-[![Discord Server](https://img.shields.io/badge/Discord-Server-blue.svg)](https://discord.gg/gaf4duhfmS)
 
-**OR**
+Discord :-  krish._.rivera
 
-Discord :- Desire#2365
-           krish._.rivera
-
-*Happy BombSquading*
+*Happy BombSquading Stormers*
 
 # Features 
 
@@ -97,7 +93,8 @@ Discord :- Desire#2365
 
 **Special Thanks To all Of them**
 - Thanks To MrSmoothy
-- Thanks to Thor
+- Thanks To *Thor*
+- Thanks To Thunder&Ghosty
 - Thanks To awesomeLogic
 - Thanks To MythB
 - Thanks To egg 
